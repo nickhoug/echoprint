@@ -10,6 +10,9 @@
 
 // This example code is in the public domain.
 
+#include "Talkie.h" 
+#include "Vocab_US_Large.h"
+
 #define I2C_SDA 21
 #define I2C_SCL 22
 
@@ -17,6 +20,7 @@ uint8_t falling_edge = 0;
 byte transmission = 0x00;
 uint8_t read_flag = 0; 
 int timer = 0; 
+uint8_t main_screen_flag = 1; 
 
 void IRAM_ATTR i2c() {
   falling_edge++; 
@@ -64,6 +68,29 @@ byte flipByte(byte c)
        return c;
      }
 
+void state_machine(byte transmission, uint8_t main_screen_flag) {
+  if (main_screen_flag == 1) {
+    if (transmission == 0x00) {
+      
+    }
+    if (transmission == 0x01) {
+      
+    }
+    if (transmission == 0x02) {
+      
+    }
+    if (transmission == 0x03) {
+      
+    }
+    if (transmission == 0x04) {
+      
+    }
+    if (transmission == 0x05) {
+      
+    }
+  }
+}
+
 void setup() {
   pinMode(I2C_SDA, INPUT_PULLUP);
   pinMode(I2C_SCL, INPUT_PULLUP);
@@ -82,6 +109,7 @@ void loop() {
     transmission = flipByte(transmission); 
     Serial.printf("Command = 0x%02x\r\n", transmission);
     Serial.printf("\n");
+    delay(100); 
     transmission = 0x00; 
     read_flag = 0; 
   }

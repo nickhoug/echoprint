@@ -42,6 +42,9 @@
 #include "stepper.h"
 #include "configuration_store.h"
 #include "utility.h"
+#include "echoprint.h"
+
+Echoprint echoprint(29, 27); //SCK, SDA
 
 #if HAS_BUZZER && DISABLED(LCD_USE_I2C_BUZZER)
   #include "buzzer.h"
@@ -294,6 +297,7 @@ uint16_t max_display_update_time = 0;
       } \
       if (lcdDrawUpdate) \
         lcd_implementation_drawmenu_ ## TYPE(encoderLine == _thisItemNr, _lcdLineNr, PSTR(LABEL), ## __VA_ARGS__); \
+        echoprint.Tx(encoderLine); \
     } \
     ++_thisItemNr
 
