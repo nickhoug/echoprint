@@ -1,6 +1,6 @@
 
-#define spoof_MOSI MOSI
-#define spoof_SCK SCK
+#define spoof_MOSI 27
+#define spoof_SCK 29
 
 #define SDA_HIGH digitalWrite(spoof_MOSI, HIGH)
 #define SDA_LOW digitalWrite(spoof_MOSI, LOW)
