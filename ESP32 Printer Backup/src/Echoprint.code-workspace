@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../Echoprint"
+		},
+		{
+			"name": "ESP32 Printer Backup",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

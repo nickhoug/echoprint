@@ -1,4 +1,3 @@
-
 #include "Wire.h"
 #include "Arduino.h"
 #include "Talkie.h" 
@@ -113,7 +112,7 @@ void onReceive(int len){
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.setDebugOutput(true);
   Wire.onReceive(onReceive);
   Wire.begin((uint8_t)I2C_DEV_ADDR);
