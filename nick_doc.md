@@ -11,7 +11,7 @@ Echoprint uses a common communication protocol called I2C stands for "Inter-Inte
 
 Located on the bottom of the printer are three hex screws that utilize a size 2mm hex allen wrench. Remove these screws and gain acess to the main motherboard of the printer. Keep these screws somewhere save and when the cover comes off, there will be a fan cable attached to it, so disconnect it carefully. 
 
-![Mainboard Cover](images\control-box-screw-locations-ender-3-v2.jpeg)
+![Mainboard Cover](images/control-box-screw-locations-ender-3-v2.jpeg)
 
 ### 2 Install the bootloader for the Creality Ender 3 Pro
 
@@ -45,7 +45,7 @@ Now that we have the software downloaded, we now need to establish an I2C connec
 
 First off is pin 27. This is a forgotton GPIO pin located under one of the boards main capacitors. The story behind this was that there was a connector for it to expand the printers hardware, but due to heating issues, this connector was removed and a capacitor was put in it's place. Located as shown in the picture below (this is from a dated source, and back then, it was still called pin 35). Make sure to cover with either heat shrink or electrical tape.
 
-![Pin 27](images\pin_27.PNG)
+![Pin 27](images/pin_27.PNG)
 
 To get access to the pin, the solder needs to be removed from the hole and a jumper/wire needs to be resoldered in it's place. For the Echoprint application, a male jumper with a female end thats around 8 inches long is recommended.
 
@@ -63,7 +63,7 @@ Once these two connections are made, reinstall the mainboard following the rever
 
 Now that all of the electrical connections are made, we can start mounting the Echoprint system. Uncover the Echoprint system and locate the header pins. Using the schematic below, wire up all the connections, route it through the routing hole at the top of the box, and recover Echoprint. 
 
-![Schematic](images\schematic.png)
+![Schematic](images/schematic.png)
 
 With the printer's LCD facing you, on the bottom right are 2 M4 screws. Unscrew these and thread them through the cooresponding holes on the Echoprint mount. Screw the screws back in to the holes they came out of and the Echoprint system is mounted. 
 
