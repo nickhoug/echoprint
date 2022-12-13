@@ -11,6 +11,8 @@ Echoprint uses a common communication protocol called I2C stands for "Inter-Inte
 
 Located on the bottom of the printer are three hex screws that utilize a size 2mm hex allen wrench. Remove these screws and gain acess to the main motherboard of the printer. Keep these screws somewhere save and when the cover comes off, there will be a fan cable attached to it, so disconnect it carefully. 
 
+![Mainboard Cover](images\control-box-screw-locations-ender-3-v2.jpeg)
+
 ### 2 Install the bootloader for the Creality Ender 3 Pro
 
 Before any code can be flashed onto the printer, the bootloader needs to be installed first. This allows the printer to run any code put on to it and configures all of the internal settings. The best method for this is following along with the video below. This is a simple process that is necessary for programming the printer for a variety of applications, not just Echoprint. 
@@ -47,6 +49,24 @@ First off is pin 27. This is a forgotton GPIO pin located under one of the board
 
 To get access to the pin, the solder needs to be removed from the hole and a jumper/wire needs to be resoldered in it's place. For the Echoprint application, a male jumper with a female end thats around 8 inches long is recommended.
 
-Next up is pin 29. This pin is connected to the buzzer located on the LCD screen for the printer and to gain access, we need to splice into it using the rainbow ribbon connector on the printer. There are adapters made for this pin, but splicing into the wire works just as well. On the rainbow LCD connector, the one that plugs into the black 2x5 connector near the USB port, cut the **brown** wire about an inch from the connection. Pull this wire away from the rest of the ribbon cable and solder another female jumper to it, again 8 inches in length. Again, make sure to cover with either heat shrink or electrical tape. 
+Next up is pin 29. This pin is connected to the buzzer located on the LCD screen for the printer and to gain access, we need to splice into it using the rainbow ribbon connector on the printer. There are adapters made for this pin, but splicing into the wire works just as well. it is important to note that this will **remove buzzer functionality**. The engineering choice made here was that if exterrnal speakers were being added to the printer, the haptic feedback buzzer was worth ditching. On the rainbow LCD connector, the one that plugs into the black 2x5 connector near the USB port, cut the **brown** wire about an inch from the connection. Pull this wire away from the rest of the ribbon cable and solder another female jumper to it, again 8 inches in length. Again, make sure to cover with either heat shrink or electrical tape. 
 
-Once these two connections are made, reinstall the mainboard following the reverse steps as before and route the connections threw the small notch in the top plate; the plate the board is mounted to.
+### 6. Add power and ground lines 
+
+Now that the data lines are established, we now need power and ground. In between the 2x5 LCD display connectopr and the USB is a 3x2 header pin connector. On the side closest to the edgeof the PCB and in the orientation as shown in the picture above, the pin closest to the USB port is the Ground pin and the pin closest to the LCD connector is the Power pin, skipping the one in the middle. Connect female-to-female jumpers to these pins and make sure the connections are about 8 inches long. 
+
+### 7. Reinstallation
+
+Once these two connections are made, reinstall the mainboard following the reverse steps as before and route the connections threw the small notch in the top plate; the plate the board is mounted to. Make sure to mount the bottom cover and fan back to the board and plugging it in the process. 
+
+### 8. Mount Echoprint
+
+Now that all of the electrical connections are made, we can start mounting the Echoprint system. Uncover the Echoprint system and locate the header pins. Using the schematic below, wire up all the connections, route it through the routing hole at the top of the box, and recover Echoprint. 
+
+![Schematic](images\schematic.png)
+
+With the printer's LCD facing you, on the bottom right are 2 M4 screws. Unscrew these and thread them through the cooresponding holes on the Echoprint mount. Screw the screws back in to the holes they came out of and the Echoprint system is mounted. 
+
+### 8. Finish
+
+After this, Echoprint should power on with your printer and using 1980's text-to-speech technology, read out the LCD on the Ender 3 Pro. 
