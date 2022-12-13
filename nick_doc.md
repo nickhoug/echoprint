@@ -5,6 +5,14 @@ Echoprint uses a common communication protocol called I2C stands for "Inter-Inte
 
 ![I2C Protocol](images/i2C.jpg)
 
+## Text-To-Speech (tts)
+
+The heart of this project uses Linear Predictive Coding (LPC), a speech model developed in the late 1980's and found in many kids toys at the time. If you've ever heard a dated robotic voice, it was most likely LPC that made it happen. At a high level, a model of human speech and all syllable sounds is convoluted with the input sound, thus making a computerized model of human speech. 
+
+The  ["Talkie.h" library for Arduino ](https://github.com/ArminJo/Talkie)make use of this model and offer hundreds of vocabulary words preprogrammed into the library. The printer sends a command to Echoprint, and using a combination of the current command and the last sent command, Echoprint can determine what menu option the printer is highlighting. Once it knows the menu item in question, the specific word or set of words is sent to the speakers so the user can hear the item. 
+
+There are some ways to preprogram your own words, and even a couple tools including BlueWizard for MacOS and the "python_wizard" available on the Talkie.h Github, but we found the preprogrammed words to be sufficient enough and expansion is definetly available in the future. 
+
 ## How to Install Echoprint
 
 ### 1. Remove the mainboard cover
@@ -67,6 +75,10 @@ Now that all of the electrical connections are made, we can start mounting the E
 
 With the printer's LCD facing you, on the bottom right are 2 M4 screws. Unscrew these and thread them through the cooresponding holes on the Echoprint mount. Screw the screws back in to the holes they came out of and the Echoprint system is mounted. 
 
-### 8. Finish
+### 9. Finish
 
 After this, Echoprint should power on with your printer and using 1980's text-to-speech technology, read out the LCD on the Ender 3 Pro. 
+
+Given that the Creality Ender 3 system is an open-source system likely to experience updates in it's time, the following menu was used to program Echoprint and update files will be posted on the Github. 
+
+![Menu Tree](images/ender_menu.jpg)
