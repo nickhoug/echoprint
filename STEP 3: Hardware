@@ -1,0 +1,108 @@
+
+## Safety Guards
+
+EchoPrint uses 3D printed fan guards to decrease risk of contact between user and hazards just as contact with one or both of the two spinning extruder fans during printing. Find the STL's below for both files
+![I2C Protocol](images/i2C.jpg)
+
+
+## How to Print 
+
+Since this is in the set-up, it is important to print these safely. While not ideal, we recommend printing the below files using a visual aid or accompanying user as these 3D printing parts are necessary safety features and will hold the PC board.
+Follow the Ender-3 Printing protocols with the following specificications.
+
+Hardware Required: 
+- 3D Printer
+- visual aid for printing components required for EchoPrint operation
+- assorted hex keys (generic)
+- 2 magnets (https://www.amazon.com/Magnets-Refrigerator-Cylinder-Whiteboard-Miniature/dp/B0936M3WPK/ref=sr_1_2_sspa?crid=3JOQ6WOSIC2Z2&keywords=small+strong+magnets&qid=1670941628&sprefix=small+string+magnets%2Caps%2C75&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTU1LUkpRSUNQTFgwJmVuY3J5cHRlZElkPUEwNzk0NTUwM0kzNDJETUEyT1NSWCZlbmNyeXB0ZWRBZElkPUEwODYxMzQ2MlBLR1UyVVdWVTZWMSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
+- super glue (https://www.amazon.com/Krazy-Glue-Max-Bond-Squeeze/dp/B01MYUM9FD/ref=sr_1_2_sspa?crid=1YKT4N1T6PHUE&keywords=super+glue&qid=1670941605&sprefix=super+glue%2Caps%2C116&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyMFhXUVVPSUg2UlFSJmVuY3J5cHRlZElkPUEwODc4MDc2T1g2N1IxRVNOV1lEJmVuY3J5cHRlZEFkSWQ9QTAyMjM5MDUySEhGRU9KWkZZMlFVJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==)
+- pliars or wire cutters (generic to remove supports)
+
+### STL Files
+
+Download the repository from the [Echoprint Github](https://github.com/nickhoug/echoprint)
+You should already have this repository downloaded when you worked on the screen reader portion. This includes the CAD files for all of the mechanical parts described below.
+
+### 1. Side Fan
+
+Located on the side of the printer extruder is a small rectangular fan connected to the large extruder fan (known as the axial fan) via 4 screws. Remove these screws and keep them somewhere safe for when you will reconnect it.
+This has a lot of overhangs that require supports so double check supports are turned on!
+
+STL NAME: SIDE_FAN_COVER.stl
+
+#### Recommended slicing and printing specs:
+
+- 0.15mm Quality
+- FILL DENSITY: 30-60%
+- FILL PATTERN: Rectangular
+- Generate Support Material [ON]
+- Auto Generated Supports [ON]
+
+![Side Fan](images/control-box-screw-locations-ender-3-v2.jpeg)
+
+### 2 Axial Fan
+
+This fan cover can only be put on with the side fan on so make sure to not slide on the side fan cover yet. Similalry double check that supports are turned on. 
+
+STL NAME: AXIAL_FAN_COVER.stl
+
+#### Recommended slicing and printing specs:
+
+- 0.15mm Quality
+- FILL DENSITY: 40-60%
+- FILL PATTERN: Rectangular
+- Generate Support Material [ON]
+- Auto Generated Supports [ON]
+
+
+### 3 PC Board Box
+
+This box will house your built PC Board. It comes in two files that need to be print seperately. The box and the box's lid. The box is rectangular and the lid has a hole that allows the speakers to be accessbile while covering the wires.
+It is a push-fit lid and can be removed for access to the board if needed.
+
+STL NAME 1: BOARD_BOX.stl
+
+STL NAME 2: BOARD_BOX_LID.stl
+
+
+#### Recommended slicing and printing specs:
+
+- 0.30mm OPTIMIZED or 0.20mm SPEED
+- FILL DENSITY: 50-80%
+- FILL PATTERN: Gyroid
+- Support Material [OFF]
+- BRIM [ON]
+
+
+### Post-Print installation
+
+#### Assemble PC Board Housing
+
+1. Place the empty box hole-side down onto your workspace.
+
+2. Attach two magnets to the now upwards facing bottom of your box using super glue. It does not matter where though we recommend a few inches apart an inch from any of the edges.
+
+3. Slide the Board into the printed box with the speakers facing towards you.
+NOTE: It will only fit one way. Screws can be used to secure the board in place if desired in the non-speaker corners; however, it is a tight fit so not necessary.
+
+4. Place the box lid on top. 
+You should feel small rectangular pegs that slide into square holes on the corners of the box. It will only fit in one orientation.
+Push it down until the lid is level with the box.
+
+5. Facing the printer's front (same side as the screen), mount your box the lower left magnetic space. 
+This will keep it in place and ensure it is not seperated from the printer unless desired elsewhere for easier listening.
+
+#### Place Fan Covers
+
+1. Slide on the Axial Fan cover, rescrewing the larger screws to secure in place.
+
+2. Slide on the Side Fan cover.
+
+3. Re-attach the side fan + cover system using the tiny removed screws from before.
+
+4. Jiggle the installed covers to make sure they are secure and don't need to be tightened more.
+If feel looslesness, tighten to avoid possible interference with extruding.
+
+### 9. Finish
+
+After this, Echoprint should power on normally and you should be ready to start printing!
